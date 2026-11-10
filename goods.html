@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OshiLog - グッズ管理</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body data-calendar-type="goods">
+
+<div class="app-page active">
+
+    <header class="page-header">
+
+        <button type="button"
+                onclick="location.href='home.html'">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h1>🛍️ グッズ管理</h1>
+
+        <div></div>
+
+    </header>
+
+
+    <main class="main-content">
+
+        <!-- =========================
+             カレンダー
+        ========================== -->
+
+        <div class="cute-card calendar-card">
+
+            <div class="calendar-page-title">
+
+                <h2>🛍️ グッズカレンダー</h2>
+
+                <p>
+                    購入日をタップしてグッズを確認・追加できます
+                </p>
+
+            </div>
+
+            <div id="calendar"></div>
+
+        </div>
+
+
+        <!-- =========================
+             グッズ一覧
+        ========================== -->
+
+        <div class="cute-card">
+
+            <h2>📦 登録済みグッズ</h2>
+
+            <div id="goods-list"></div>
+
+        </div>
+
+
+        <!-- =========================
+             直接登録
+        ========================== -->
+
+        <div class="cute-card">
+
+            <h2>➕ グッズを直接登録</h2>
+
+            <form id="goods-form">
+
+                <label for="goods-oshi-id">
+                    👑 推し
+                </label>
+
+                <select id="goods-oshi-id">
+                    <option value="">推しを選択</option>
+                </select>
+
+
+                <label for="goods-name">
+                    🛍️ グッズ名
+                </label>
+
+                <input
+                    type="text"
+                    id="goods-name"
+                    placeholder="例：アクリルスタンド">
+
+
+                <label for="goods-category">
+                    📂 カテゴリー
+                </label>
+
+                <select id="goods-category">
+
+                    <option value="アクスタ">
+                        アクスタ
+                    </option>
+
+                    <option value="缶バッジ">
+                        缶バッジ
+                    </option>
+
+                    <option value="ぬいぐるみ">
+                        ぬいぐるみ
+                    </option>
+
+                    <option value="トレカ">
+                        トレカ
+                    </option>
+
+                    <option value="キーホルダー">
+                        キーホルダー
+                    </option>
+
+                    <option value="その他">
+                        その他
+                    </option>
+
+                </select>
+
+
+                <label for="goods-date">
+                    📅 購入日
+                </label>
+
+                <input
+                    type="date"
+                    id="goods-date">
+
+
+                <label for="goods-memo">
+                    📝 メモ
+                </label>
+
+                <textarea
+                    id="goods-memo"
+                    rows="3"
+                    placeholder="メモを入力"></textarea>
+
+
+                <button
+                    type="button"
+                    class="cute-btn"
+                    onclick="saveGoods()">
+
+                    登録する
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         下部タブ
+    ========================== -->
+
+    <nav class="tab-bar">
+
+        <a href="home.html" class="tab">
+            <i class="fa-solid fa-house"></i>
+            <span>ホーム</span>
+        </a>
+
+        <a href="schedule.html" class="tab">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>予定</span>
+        </a>
+
+        <a href="log.html" class="tab">
+            <i class="fa-solid fa-camera"></i>
+            <span>ログ</span>
+        </a>
+
+        <a href="goods.html" class="tab active">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>グッズ</span>
+        </a>
+
+        <a href="money.html" class="tab">
+            <i class="fa-solid fa-wallet"></i>
+            <span>お金</span>
+        </a>
+
+        <a href="profile.html" class="tab">
+            <i class="fa-solid fa-user"></i>
+            <span>プロフ</span>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
