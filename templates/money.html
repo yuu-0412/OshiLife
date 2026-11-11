@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OshiLog - お金管理</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body data-calendar-type="money">
+
+<div class="app-page active">
+
+    <header class="page-header">
+
+        <button type="button"
+                onclick="location.href='../index.html'">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h1>💰 お金管理</h1>
+
+        <div></div>
+
+    </header>
+
+
+    <main class="main-content">
+
+        <!-- =========================
+             カレンダー
+        ========================== -->
+
+        <div class="cute-card calendar-card">
+
+            <div class="calendar-page-title">
+
+                <h2>💰 お金カレンダー</h2>
+
+                <p>
+                    日付をタップして支出を確認・追加できます
+                </p>
+
+            </div>
+
+            <div id="calendar"></div>
+
+        </div>
+
+
+        <!-- =========================
+             支出集計
+        ========================== -->
+
+        <div class="cute-card money-summary-card">
+
+            <h2>📊 支出集計</h2>
+
+            <div class="money-summary-tabs">
+
+                <button
+                    type="button"
+                    class="money-summary-tab active"
+                    onclick="showMoneySummary('month', this)">
+                    今月
+                </button>
+
+                <button
+                    type="button"
+                    class="money-summary-tab"
+                    onclick="showMoneySummary('monthly', this)">
+                    月別
+                </button>
+
+                <button
+                    type="button"
+                    class="money-summary-tab"
+                    onclick="showMoneySummary('year', this)">
+                    年間
+                </button>
+
+            </div>
+
+
+            <!-- 今月 -->
+
+            <div
+                id="money-summary-month"
+                class="money-summary-content">
+
+                <p class="money-summary-label">
+                    今月の支出
+                </p>
+
+                <h1 id="total-money">
+                    ¥0
+                </h1>
+
+            </div>
+
+
+            <!-- 月別 -->
+
+            <div
+                id="money-summary-monthly"
+                class="money-summary-content"
+                style="display:none;">
+
+                <div class="money-year-select">
+
+                    <label for="monthly-money-year">
+                        📅 年を選択
+                    </label>
+
+                    <select
+                        id="monthly-money-year"
+                        onchange="updateMoneySummary()">
+                    </select>
+
+                </div>
+
+                <p class="money-summary-label">
+                    月別の支出
+                </p>
+
+                <div id="monthly-money-list"></div>
+
+            </div>
+
+
+            <!-- 年間 -->
+
+            <div
+                id="money-summary-year"
+                class="money-summary-content"
+                style="display:none;">
+
+                <div class="money-year-select">
+
+                    <label for="year-money-select">
+                        📅 年を選択
+                    </label>
+
+                    <select
+                        id="year-money-select"
+                        onchange="updateMoneySummary()">
+                    </select>
+
+                </div>
+
+                <p class="money-summary-label">
+                    年間の支出
+                </p>
+
+                <h1 id="year-money-total">
+                    ¥0
+                </h1>
+
+                <div id="year-money-category"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- 下部タブ -->
+
+    <nav class="tab-bar">
+
+        <a href="../index.html" class="tab">
+            <i class="fa-solid fa-house"></i>
+            <span>ホーム</span>
+        </a>
+
+        <a href="schedule.html" class="tab">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>予定</span>
+        </a>
+
+        <a href="log.html" class="tab">
+            <i class="fa-solid fa-camera"></i>
+            <span>ログ</span>
+        </a>
+
+        <a href="goods.html" class="tab">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>グッズ</span>
+        </a>
+
+        <a href="money.html" class="tab active">
+            <i class="fa-solid fa-wallet"></i>
+            <span>お金</span>
+        </a>
+
+        <a href="profile.html" class="tab">
+            <i class="fa-solid fa-user"></i>
+            <span>プロフ</span>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
