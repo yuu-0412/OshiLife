@@ -333,12 +333,10 @@ function logout() {
 }
 
 function checkLogin() {
-
     const page = location.pathname.split("/").pop();
 
     const publicPages = [
         "",
-        "index.html",
         "register.html",
         "login.html"
     ];
@@ -350,7 +348,7 @@ function checkLogin() {
     const isLogin = sessionStorage.getItem("oshilog_login");
 
     if (isLogin !== "true") {
-        location.href = "/OshiLife/index.html";
+        location.href = "/OshiLife/templates/login.html";
         return false;
     }
 
